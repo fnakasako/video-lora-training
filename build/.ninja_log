@@ -1,0 +1,9 @@
+# ninja log v6
+1	290	1752464591148344781	CMakeFiles/video_pipeline_lib.dir/src/video_pipeline.cpp.o	10d3c080e8643677
+2	293	1752464591149573946	CMakeFiles/run_tests.dir/tests/video_pipeline.test.cpp.o	f2103e5b08e414dc
+2	293	1752464591149127613	CMakeFiles/video_pipeline.dir/src/main.cpp.o	7ad7eff43533a7af
+292	490	1752464591439292875	libvideo_pipeline_lib.a	93a1f7ace34d2ecd
+3	824	1752465169746399393	CMakeFiles/video_pipeline.dir/src/main.cpp.o	7ad7eff43533a7af
+11	245	1752465364135028950	video_pipeline	f481331b3f7dcab7
+10	2181	1752465364134353742	CMakeFiles/run_tests.dir/tests/video_pipeline.test.cpp.o	f2103e5b08e414dc
+2181	2301	1752465366305225718	run_tests	549fc886c31798ad

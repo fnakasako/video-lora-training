@@ -1,0 +1,6 @@
+/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/video_pipeline_lib.dir
+/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/video_pipeline.dir
+/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/run_tests.dir
+/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/test.dir
+/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/edit_cache.dir
+/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/rebuild_cache.dir
