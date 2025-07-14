@@ -1,7 +1,7 @@
 [
 {
   "directory": "/Users/frank/Desktop/company/video-lora-training/video-lora-training/build",
-  "command": "/usr/bin/clang++ -I/Users/frank/Desktop/company/video-lora-training/video-lora-training/include -g -std=gnu++17 -arch arm64 -Wall -Wextra -o CMakeFiles/video_pipeline_lib.dir/src/video_pipeline.cpp.o -c /Users/frank/Desktop/company/video-lora-training/video-lora-training/src/video_pipeline.cpp",
+  "command": "/usr/bin/clang++ -I/Users/frank/Desktop/company/video-lora-training/video-lora-training/include -isystem /opt/homebrew/Cellar/ffmpeg/7.1.1_3/include -g -std=gnu++17 -arch arm64 -Wall -Wextra -o CMakeFiles/video_pipeline_lib.dir/src/video_pipeline.cpp.o -c /Users/frank/Desktop/company/video-lora-training/video-lora-training/src/video_pipeline.cpp",
   "file": "/Users/frank/Desktop/company/video-lora-training/video-lora-training/src/video_pipeline.cpp",
   "output": "CMakeFiles/video_pipeline_lib.dir/src/video_pipeline.cpp.o"
 },

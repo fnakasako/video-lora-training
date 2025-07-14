@@ -13,7 +13,8 @@
 		[
 			"add_library",
 			"target_compile_options",
-			"target_include_directories"
+			"target_include_directories",
+			"target_link_libraries"
 		],
 		"files" : 
 		[
@@ -27,19 +28,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 11,
+				"line" : 27,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 23,
+				"line" : 37,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 18,
+				"line" : 34,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 41,
 				"parent" : 0
 			}
 		]
@@ -66,6 +73,11 @@
 				{
 					"backtrace" : 3,
 					"path" : "/Users/frank/Desktop/company/video-lora-training/video-lora-training/include"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/Cellar/ffmpeg/7.1.1_3/include"
 				}
 			],
 			"language" : "CXX",
