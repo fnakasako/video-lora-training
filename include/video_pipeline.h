@@ -16,6 +16,7 @@ public:
     VideoProcessor{
         const std::filesystem::path& input_path,
         const std::filesystem::path& output_path,
+        bool center_crop,
         int total_frames,
         int frame_size
     };
@@ -26,6 +27,7 @@ public:
 private:
     const std::filesystem::path input_path;
     const std::filesystem::path output_path;
+    bool center_crop,
     int total_frames;
     int frame_size;
 
