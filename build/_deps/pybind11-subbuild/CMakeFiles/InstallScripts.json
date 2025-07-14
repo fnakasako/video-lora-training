@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/_deps/pybind11-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

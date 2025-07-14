@@ -28,25 +28,31 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 27,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 37,
+				"line" : 36,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 34,
+				"line" : 29,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 33,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 41,
+				"line" : 39,
 				"parent" : 0
 			}
 		]
@@ -76,6 +82,11 @@
 				},
 				{
 					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/Users/frank/Desktop/company/video-lora-training/video-lora-training/external"
+				},
+				{
+					"backtrace" : 5,
 					"isSystem" : true,
 					"path" : "/opt/homebrew/Cellar/ffmpeg/7.1.1_3/include"
 				}

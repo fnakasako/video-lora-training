@@ -6,6 +6,10 @@
 			[
 				{
 					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
@@ -17,14 +21,30 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
+				},
+				{
+					"build" : "_deps/pybind11-build",
+					"jsonFile" : "directory-_deps.pybind11-build-Debug-b7b324784034f4cfd3bb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "build/_deps/pybind11-src"
 				}
 			],
 			"name" : "Debug",
 			"projects" : 
 			[
 				{
+					"childIndexes" : 
+					[
+						1
+					],
 					"directoryIndexes" : 
 					[
 						0
@@ -34,8 +54,17 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "pybind11",
+					"parentIndex" : 0
 				}
 			],
 			"targets" : 
@@ -43,22 +72,29 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "run_tests::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-run_tests-Debug-66c664670bdb8339ac07.json",
+					"jsonFile" : "target-run_tests-Debug-7f57181b869fa16befa3.json",
 					"name" : "run_tests",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "video_pipeline::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-video_pipeline-Debug-b53d4ef8173a89e53a07.json",
+					"jsonFile" : "target-video_pipeline-Debug-5d1bdaabe600b6acc524.json",
 					"name" : "video_pipeline",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "video_pipeline_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-video_pipeline_lib-Debug-232bcfc0700b733d66d1.json",
+					"jsonFile" : "target-video_pipeline_lib-Debug-873e9a233e72fdf2238f.json",
 					"name" : "video_pipeline_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "video_pipeline_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-video_pipeline_py-Debug-b87be63ca7695c74bebc.json",
+					"name" : "video_pipeline_py",
 					"projectIndex" : 0
 				}
 			]

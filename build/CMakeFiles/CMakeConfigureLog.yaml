@@ -243,3 +243,79 @@ events:
       LTO support using: LLVM version 14.0.0, (clang-1400.0.29.202) (static support for 29, runtime is 29)
       TAPI support using: Apple TAPI version 14.0.0 (tapi-1400.0.11)
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/pybind11-src/tools/pybind11Common.cmake:287 (check_cxx_compiler_flag)"
+      - "build/_deps/pybind11-src/tools/pybind11Common.cmake:327 (_pybind11_return_if_cxx_and_linker_flags_work)"
+      - "build/_deps/pybind11-src/tools/pybind11Common.cmake:399 (_pybind11_generate_lto)"
+      - "build/_deps/pybind11-src/CMakeLists.txt:247 (include)"
+    checks:
+      - "Performing Test HAS_FLTO_THIN"
+    directories:
+      source: "/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/CMakeScratch/TryCompile-pqecbq"
+      binary: "/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/CMakeScratch/TryCompile-pqecbq"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAS_FLTO_THIN"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/CMakeScratch/TryCompile-pqecbq'
+        
+        Run Build Command(s): /opt/anaconda3/bin/ninja -v cmTC_83460
+        [1/2] /usr/bin/clang++ -DHAS_FLTO_THIN  -std=gnu++17 -arch arm64   -flto -MD -MT CMakeFiles/cmTC_83460.dir/src.cxx.o -MF CMakeFiles/cmTC_83460.dir/src.cxx.o.d -o CMakeFiles/cmTC_83460.dir/src.cxx.o -c /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/CMakeScratch/TryCompile-pqecbq/src.cxx
+        [2/2] : && /usr/bin/clang++ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cmTC_83460.dir/src.cxx.o -o cmTC_83460  -flto= && :
+        FAILED: cmTC_83460 
+        : && /usr/bin/clang++ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cmTC_83460.dir/src.cxx.o -o cmTC_83460  -flto= && :
+        clang: error: unsupported argument '' to option 'flto='
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "build/_deps/pybind11-src/tools/pybind11Common.cmake:287 (check_cxx_compiler_flag)"
+      - "build/_deps/pybind11-src/tools/pybind11Common.cmake:332 (_pybind11_return_if_cxx_and_linker_flags_work)"
+      - "build/_deps/pybind11-src/tools/pybind11Common.cmake:399 (_pybind11_generate_lto)"
+      - "build/_deps/pybind11-src/CMakeLists.txt:247 (include)"
+    checks:
+      - "Performing Test HAS_FLTO"
+    directories:
+      source: "/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/CMakeScratch/TryCompile-C4KyYB"
+      binary: "/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/CMakeScratch/TryCompile-C4KyYB"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAS_FLTO"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/CMakeScratch/TryCompile-C4KyYB'
+        
+        Run Build Command(s): /opt/anaconda3/bin/ninja -v cmTC_1d6c6
+        [1/2] /usr/bin/clang++ -DHAS_FLTO  -std=gnu++17 -arch arm64   -flto -MD -MT CMakeFiles/cmTC_1d6c6.dir/src.cxx.o -MF CMakeFiles/cmTC_1d6c6.dir/src.cxx.o.d -o CMakeFiles/cmTC_1d6c6.dir/src.cxx.o -c /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/CMakeScratch/TryCompile-C4KyYB/src.cxx
+        [2/2] : && /usr/bin/clang++ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cmTC_1d6c6.dir/src.cxx.o -o cmTC_1d6c6  -flto && :
+        
+      exitCode: 0
+...

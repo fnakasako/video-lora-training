@@ -1,0 +1,24 @@
+Start testing: Jul 14 15:13 EDT
+----------------------------------------------------------
+1/1 Testing: VideoPipelineTests
+1/1 Test: VideoPipelineTests
+Command: "/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/run_tests"
+Directory: /Users/frank/Desktop/company/video-lora-training/video-lora-training/build
+"VideoPipelineTests" start time: Jul 14 15:13 EDT
+Output:
+----------------------------------------------------------
+[doctest] doctest version is "2.4.12"
+[doctest] run with "--help" for options
+===============================================================================
+[doctest] test cases: 0 | 0 passed | 0 failed | 0 skipped
+[doctest] assertions: 0 | 0 passed | 0 failed |
+[doctest] Status: SUCCESS!
+<end of output>
+Test time =   0.43 sec
+----------------------------------------------------------
+Test Passed.
+"VideoPipelineTests" end time: Jul 14 15:13 EDT
+"VideoPipelineTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 14 15:13 EDT

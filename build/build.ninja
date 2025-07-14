@@ -53,7 +53,7 @@ build CMakeFiles/video_pipeline_lib.dir/src/video_pipeline.cpp.o: CXX_COMPILER__
   CONFIG = Debug
   DEP_FILE = CMakeFiles/video_pipeline_lib.dir/src/video_pipeline.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -Wall -Wextra
-  INCLUDES = -I/Users/frank/Desktop/company/video-lora-training/video-lora-training/include -isystem /opt/homebrew/Cellar/ffmpeg/7.1.1_3/include
+  INCLUDES = -I/Users/frank/Desktop/company/video-lora-training/video-lora-training/include -isystem /Users/frank/Desktop/company/video-lora-training/video-lora-training/external -isystem /opt/homebrew/Cellar/ffmpeg/7.1.1_3/include
   OBJECT_DIR = CMakeFiles/video_pipeline_lib.dir
   OBJECT_FILE_DIR = CMakeFiles/video_pipeline_lib.dir/src
 
@@ -88,7 +88,7 @@ build CMakeFiles/video_pipeline.dir/src/main.cpp.o: CXX_COMPILER__video_pipeline
   CONFIG = Debug
   DEP_FILE = CMakeFiles/video_pipeline.dir/src/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64
-  INCLUDES = -I/Users/frank/Desktop/company/video-lora-training/video-lora-training/include
+  INCLUDES = -I/Users/frank/Desktop/company/video-lora-training/video-lora-training/external -I/Users/frank/Desktop/company/video-lora-training/video-lora-training/include
   OBJECT_DIR = CMakeFiles/video_pipeline.dir
   OBJECT_FILE_DIR = CMakeFiles/video_pipeline.dir/src
 
@@ -109,6 +109,44 @@ build video_pipeline: CXX_EXECUTABLE_LINKER__video_pipeline_Debug CMakeFiles/vid
   PRE_LINK = :
   TARGET_FILE = video_pipeline
   TARGET_PDB = video_pipeline.dbg
+
+# =============================================================================
+# Object build statements for MODULE_LIBRARY target video_pipeline_py
+
+
+#############################################
+# Order-only phony target for video_pipeline_py
+
+build cmake_object_order_depends_target_video_pipeline_py: phony || cmake_object_order_depends_target_video_pipeline_lib
+
+build CMakeFiles/video_pipeline_py.dir/src/bindings.cpp.o: CXX_COMPILER__video_pipeline_py_unscanned_Debug /Users/frank/Desktop/company/video-lora-training/video-lora-training/src/bindings.cpp || cmake_object_order_depends_target_video_pipeline_py
+  CONFIG = Debug
+  DEFINES = -Dvideo_pipeline_py_EXPORTS
+  DEP_FILE = CMakeFiles/video_pipeline_py.dir/src/bindings.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -fPIC -fvisibility=hidden
+  INCLUDES = -I/Users/frank/Desktop/company/video-lora-training/video-lora-training/include -isystem /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/_deps/pybind11-src/include -isystem /opt/anaconda3/include/python3.9
+  OBJECT_DIR = CMakeFiles/video_pipeline_py.dir
+  OBJECT_FILE_DIR = CMakeFiles/video_pipeline_py.dir/src
+
+
+# =============================================================================
+# Link build statements for MODULE_LIBRARY target video_pipeline_py
+
+
+#############################################
+# Link the shared module video_pipeline_py.cpython-39-darwin.so
+
+build video_pipeline_py.cpython-39-darwin.so: CXX_MODULE_LIBRARY_LINKER__video_pipeline_py_Debug CMakeFiles/video_pipeline_py.dir/src/bindings.cpp.o | libvideo_pipeline_lib.a /opt/homebrew/Cellar/ffmpeg/7.1.1_3/lib/libavcodec.dylib /opt/homebrew/Cellar/ffmpeg/7.1.1_3/lib/libavformat.dylib /opt/homebrew/Cellar/ffmpeg/7.1.1_3/lib/libswscale.dylib || libvideo_pipeline_lib.a
+  ARCH_FLAGS = -arch arm64
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  LINK_FLAGS = -Xlinker -undefined -Xlinker dynamic_lookup
+  LINK_LIBRARIES = libvideo_pipeline_lib.a  /opt/homebrew/Cellar/ffmpeg/7.1.1_3/lib/libavcodec.dylib  /opt/homebrew/Cellar/ffmpeg/7.1.1_3/lib/libavformat.dylib  /opt/homebrew/Cellar/ffmpeg/7.1.1_3/lib/libswscale.dylib
+  OBJECT_DIR = CMakeFiles/video_pipeline_py.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = video_pipeline_py.cpython-39-darwin.so
+  TARGET_PDB = video_pipeline_py.cpython-39-darwin.so.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target run_tests
@@ -182,9 +220,52 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/frank/Desktop/company/video-lora-training/video-lora-training/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for test
+
+build _deps/pybind11-build/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/_deps/pybind11-build && /opt/homebrew/bin/ctest
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps/pybind11-build/test: phony _deps/pybind11-build/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/pybind11-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/_deps/pybind11-build && /opt/homebrew/bin/ccmake -S/Users/frank/Desktop/company/video-lora-training/video-lora-training -B/Users/frank/Desktop/company/video-lora-training/video-lora-training/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build _deps/pybind11-build/edit_cache: phony _deps/pybind11-build/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/pybind11-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/_deps/pybind11-build && /opt/homebrew/bin/cmake --regenerate-during-build -S/Users/frank/Desktop/company/video-lora-training/video-lora-training -B/Users/frank/Desktop/company/video-lora-training/video-lora-training/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/pybind11-build/rebuild_cache: phony _deps/pybind11-build/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build video_pipeline_lib: phony libvideo_pipeline_lib.a
+
+build video_pipeline_py: phony video_pipeline_py.cpython-39-darwin.so
 
 # =============================================================================
 # Folder targets.
@@ -194,7 +275,14 @@ build video_pipeline_lib: phony libvideo_pipeline_lib.a
 #############################################
 # Folder: /Users/frank/Desktop/company/video-lora-training/video-lora-training/build
 
-build all: phony libvideo_pipeline_lib.a video_pipeline run_tests
+build all: phony libvideo_pipeline_lib.a video_pipeline video_pipeline_py.cpython-39-darwin.so run_tests _deps/pybind11-build/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/_deps/pybind11-build
+
+build _deps/pybind11-build/all: phony
 
 # =============================================================================
 # Built-in targets
@@ -203,14 +291,14 @@ build all: phony libvideo_pipeline_lib.a video_pipeline run_tests
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/cmake_install.cmake /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CTestTestfile.cmake: RERUN_CMAKE | /Users/frank/Desktop/company/video-lora-training/video-lora-training/CMakeLists.txt /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.0.3/CMakeCXXCompiler.cmake CMakeFiles/4.0.3/CMakeSystem.cmake
+build build.ninja /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/cmake_install.cmake /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/_deps/pybind11-build/cmake_install.cmake /Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CTestTestfile.cmake: RERUN_CMAKE | /Users/frank/Desktop/company/video-lora-training/video-lora-training/CMakeLists.txt /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/share/cmake/Modules/CMakeParseArguments.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake /opt/homebrew/share/cmake/Modules/FetchContent.cmake /opt/homebrew/share/cmake/Modules/FetchContent/CMakeLists.cmake.in /opt/homebrew/share/cmake/Modules/FindGit.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake /opt/homebrew/share/cmake/Modules/FindPython.cmake /opt/homebrew/share/cmake/Modules/FindPython/Support.cmake /opt/homebrew/share/cmake/Modules/FindPythonInterp.cmake /opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.0.3/CMakeCXXCompiler.cmake CMakeFiles/4.0.3/CMakeSystem.cmake _deps/pybind11-src/CMakeLists.txt _deps/pybind11-src/tools/FindPythonLibsNew.cmake _deps/pybind11-src/tools/JoinPaths.cmake _deps/pybind11-src/tools/pybind11Common.cmake _deps/pybind11-src/tools/pybind11Tools.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Users/frank/Desktop/company/video-lora-training/video-lora-training/CMakeLists.txt /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.0.3/CMakeCXXCompiler.cmake CMakeFiles/4.0.3/CMakeSystem.cmake: phony
+build /Users/frank/Desktop/company/video-lora-training/video-lora-training/CMakeLists.txt /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/share/cmake/Modules/CMakeParseArguments.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake /opt/homebrew/share/cmake/Modules/FetchContent.cmake /opt/homebrew/share/cmake/Modules/FetchContent/CMakeLists.cmake.in /opt/homebrew/share/cmake/Modules/FindGit.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake /opt/homebrew/share/cmake/Modules/FindPython.cmake /opt/homebrew/share/cmake/Modules/FindPython/Support.cmake /opt/homebrew/share/cmake/Modules/FindPythonInterp.cmake /opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.0.3/CMakeCXXCompiler.cmake CMakeFiles/4.0.3/CMakeSystem.cmake _deps/pybind11-src/CMakeLists.txt _deps/pybind11-src/tools/FindPythonLibsNew.cmake _deps/pybind11-src/tools/JoinPaths.cmake _deps/pybind11-src/tools/pybind11Common.cmake _deps/pybind11-src/tools/pybind11Tools.cmake: phony
 
 
 #############################################
