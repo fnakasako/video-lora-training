@@ -20,11 +20,15 @@ CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
-//No help, variable specified on the command line.
-CMAKE_BUILD_TYPE:STRING=Debug
+//Choose the type of build, options are: None Debug Release RelWithDebInfo
+// MinSizeRel ...
+CMAKE_BUILD_TYPE:STRING=
 
-//No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/clang++
+//Enable/Disable color output during build.
+CMAKE_COLOR_MAKEFILE:BOOL=ON
+
+//CXX compiler
+CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
@@ -40,9 +44,6 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
-
-//No help, variable specified on the command line.
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/clang
 
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
@@ -62,11 +63,8 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//Enable/Disable output of build database during the build.
-CMAKE_EXPORT_BUILD_DATABASE:BOOL=
-
-//No help, variable specified on the command line.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
+//Enable/Disable output of compile commands during generation.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/CMakeFiles/pkgRedirects
@@ -105,7 +103,7 @@ CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
 CMAKE_INSTALL_MANDIR:PATH=
 
 //Path to a program.
-CMAKE_INSTALL_NAME_TOOL:FILEPATH=/opt/anaconda3/bin/install_name_tool
+CMAKE_INSTALL_NAME_TOOL:FILEPATH=/usr/bin/install_name_tool
 
 //C header files for non-gcc (/usr/include)
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
@@ -128,8 +126,8 @@ CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
 
-//Program used to build from build.ninja files.
-CMAKE_MAKE_PROGRAM:FILEPATH=/opt/anaconda3/bin/ninja
+//Path to a program.
+CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/make
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -271,24 +269,14 @@ FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
 FETCHCONTENT_QUIET:BOOL=ON
 
 //When not empty, overrides where to find pre-populated content
-// for doctest
-FETCHCONTENT_SOURCE_DIR_DOCTEST:PATH=
-
-//When not empty, overrides where to find pre-populated content
 // for pybind11
 FETCHCONTENT_SOURCE_DIR_PYBIND11:PATH=
 
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
-//Enables UPDATE_DISCONNECTED behavior just for population of doctest
-FETCHCONTENT_UPDATES_DISCONNECTED_DOCTEST:BOOL=OFF
-
 //Enables UPDATE_DISCONNECTED behavior just for population of pybind11
 FETCHCONTENT_UPDATES_DISCONNECTED_PYBIND11:BOOL=OFF
-
-//The directory containing a CMake configuration file for FFmpeg.
-FFmpeg_DIR:PATH=FFmpeg_DIR-NOTFOUND
 
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/opt/homebrew/bin/git
@@ -333,10 +321,10 @@ PYBIND11_SIMPLE_GIL_MANAGEMENT:BOOL=OFF
 PYBIND11_TEST:BOOL=OFF
 
 //Path to a program.
-PYTHON_EXECUTABLE:FILEPATH=/opt/anaconda3/python.app/Contents/MacOS/python
+PYTHON_EXECUTABLE:FILEPATH=/Users/frank/Desktop/company/video-lora-training/video-lora-training/.venv/bin/python
 
 //Path to a library.
-PYTHON_LIBRARY:FILEPATH=/opt/anaconda3/lib/libpython3.9.dylib
+PYTHON_LIBRARY:FILEPATH=/Users/frank/.local/share/uv/python/cpython-3.12.9-macos-aarch64-none/lib/libpython3.12.dylib
 
 //Value Computed by CMake
 VideoPipeline_BINARY_DIR:STATIC=/Users/frank/Desktop/company/video-lora-training/video-lora-training/build
@@ -452,6 +440,8 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=4
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=0
 //Patch version of cmake used to create the current loaded cache
 CMAKE_CACHE_PATCH_VERSION:INTERNAL=3
+//ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
+CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
 CMAKE_COMMAND:INTERNAL=/opt/homebrew/bin/cmake
 //Path to cpack program executable.
@@ -486,12 +476,12 @@ CMAKE_EXE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_EXPORT_BUILD_DATABASE
-CMAKE_EXPORT_BUILD_DATABASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS
+CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
-CMAKE_GENERATOR:INTERNAL=Ninja
+CMAKE_GENERATOR:INTERNAL=Unix Makefiles
 //Generator instance identifier.
 CMAKE_GENERATOR_INSTANCE:INTERNAL=
 //Name of generator platform.
@@ -600,13 +590,13 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding PYTHON
-FIND_PACKAGE_MESSAGE_DETAILS_PYTHON:INTERNAL=/opt/anaconda3/python.app/Contents/MacOS/python3.9.13
+FIND_PACKAGE_MESSAGE_DETAILS_PYTHON:INTERNAL=/Users/frank/Desktop/company/video-lora-training/video-lora-training/.venv/bin/python3.12.9
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/opt/homebrew/bin/pkg-config][v0.29.2()]
 //Details about finding Python
-FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/opt/anaconda3/bin/python3.9][/opt/anaconda3/include/python3.9][/opt/anaconda3/lib/libpython3.9.dylib][found components: Interpreter Development Development.Module Development.Embed ][v3.9.13()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Users/frank/Desktop/company/video-lora-training/video-lora-training/.venv/bin/python3.12][/Users/frank/.local/share/uv/python/cpython-3.12.9-macos-aarch64-none/include/python3.12][/Users/frank/.local/share/uv/python/cpython-3.12.9-macos-aarch64-none/lib/libpython3.12.dylib][found components: Interpreter Development Development.Module Development.Embed ][v3.12.9()]
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/opt/anaconda3/python.app/Contents/MacOS/python][v3.9.13(3.6)]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/Users/frank/Desktop/company/video-lora-training/video-lora-training/.venv/bin/python][v3.12.9(3.6)]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //Test HAS_FLTO
@@ -620,17 +610,17 @@ PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 PYBIND11_INCLUDE_DIR:INTERNAL=/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/_deps/pybind11-src/include
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
-PYTHON_INCLUDE_DIRS:INTERNAL=/opt/anaconda3/include/python3.9
+PYTHON_INCLUDE_DIRS:INTERNAL=/Users/frank/.local/share/uv/python/cpython-3.12.9-macos-aarch64-none/include/python3.12
 PYTHON_IS_DEBUG:INTERNAL=0
-PYTHON_LIBRARIES:INTERNAL=/opt/anaconda3/lib/libpython3.9.dylib
+PYTHON_LIBRARIES:INTERNAL=/Users/frank/.local/share/uv/python/cpython-3.12.9-macos-aarch64-none/lib/libpython3.12.dylib
 //ADVANCED property for variable: PYTHON_LIBRARY
 PYTHON_LIBRARY-ADVANCED:INTERNAL=1
 PYTHON_MODULE_DEBUG_POSTFIX:INTERNAL=
-PYTHON_MODULE_EXTENSION:INTERNAL=.cpython-39-darwin.so
+PYTHON_MODULE_EXTENSION:INTERNAL=.cpython-312-darwin.so
 PYTHON_MODULE_PREFIX:INTERNAL=
-PYTHON_VERSION:INTERNAL=3.9.13
+PYTHON_VERSION:INTERNAL=3.12.9
 PYTHON_VERSION_MAJOR:INTERNAL=3
-PYTHON_VERSION_MINOR:INTERNAL=9
+PYTHON_VERSION_MINOR:INTERNAL=12
 Python_ADDITIONAL_VERSIONS:INTERNAL=3.12;3.11;3.10;3.9;3.8;3.7;3.6
 SWSCALE_CFLAGS:INTERNAL=-I/opt/homebrew/Cellar/ffmpeg/7.1.1_3/include
 SWSCALE_CFLAGS_I:INTERNAL=
@@ -672,21 +662,19 @@ _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 _Python:INTERNAL=PYTHON
 //Compiler reason failure
 _Python_Compiler_REASON_FAILURE:INTERNAL=
-_Python_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=187ef8f1c7dbd0fb67284799236fb7f7
-_Python_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=86c806ed3ed41082d68ef4640313476c
+_Python_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=8d967d5f244cf97c9b6a54a857a49219
+_Python_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=fc827d11fcb6e4d15d5cafffb75f34e5
 //Development reason failure
 _Python_Development_REASON_FAILURE:INTERNAL=
 //Path to a program.
-_Python_EXECUTABLE:INTERNAL=/opt/anaconda3/bin/python3.9
+_Python_EXECUTABLE:INTERNAL=/Users/frank/Desktop/company/video-lora-training/video-lora-training/.venv/bin/python3.12
 //Path to a file.
-_Python_INCLUDE_DIR:INTERNAL=/opt/anaconda3/include/python3.9
+_Python_INCLUDE_DIR:INTERNAL=/Users/frank/.local/share/uv/python/cpython-3.12.9-macos-aarch64-none/include/python3.12
 //Python Properties
-_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;9;13;64;<none>;cpython-39-darwin;abi3;/opt/anaconda3/lib/python3.9;/opt/anaconda3/lib/python3.9;/opt/anaconda3/lib/python3.9/site-packages;/opt/anaconda3/lib/python3.9/site-packages
-_Python_INTERPRETER_SIGNATURE:INTERNAL=3b3e14fbdb539f9042164ac37a4e4c5e
-//Interpreter reason failure
-_Python_Interpreter_REASON_FAILURE:INTERNAL=
+_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;9;64;<none>;cpython-312-darwin;abi3;/Users/frank/.local/share/uv/python/cpython-3.12.9-macos-aarch64-none/lib/python3.12;/Users/frank/Desktop/company/video-lora-training/video-lora-training/.venv/lib/python3.12;/Users/frank/Desktop/company/video-lora-training/video-lora-training/.venv/lib/python3.12/site-packages;/Users/frank/Desktop/company/video-lora-training/video-lora-training/.venv/lib/python3.12/site-packages
+_Python_INTERPRETER_SIGNATURE:INTERNAL=312aaf77913dbc512c55163a55fbc4ab
 //Path to a library.
-_Python_LIBRARY_RELEASE:INTERNAL=/opt/anaconda3/lib/libpython3.9.dylib
+_Python_LIBRARY_RELEASE:INTERNAL=/Users/frank/.local/share/uv/python/cpython-3.12.9-macos-aarch64-none/lib/libpython3.12.dylib
 //NumPy reason failure
 _Python_NumPy_REASON_FAILURE:INTERNAL=
 __pkg_config_arguments_AVCODEC:INTERNAL=REQUIRED;IMPORTED_TARGET;libavcodec
@@ -707,5 +695,5 @@ pybind11_FOUND:INTERNAL=TRUE
 //Directory where pybind11 headers are located
 pybind11_INCLUDE_DIR:INTERNAL=/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/_deps/pybind11-src/include
 //Directories where pybind11 and possibly Python headers are located
-pybind11_INCLUDE_DIRS:INTERNAL=/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/_deps/pybind11-src/include;/opt/anaconda3/include/python3.9
+pybind11_INCLUDE_DIRS:INTERNAL=/Users/frank/Desktop/company/video-lora-training/video-lora-training/build/_deps/pybind11-src/include;/Users/frank/.local/share/uv/python/cpython-3.12.9-macos-aarch64-none/include/python3.12
 

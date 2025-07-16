@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/video_pipeline.dir/src/main.cpp.o -o video_pipeline  libvideo_pipeline_lib.a /opt/homebrew/Cellar/ffmpeg/7.1.1_3/lib/libavcodec.dylib /opt/homebrew/Cellar/ffmpeg/7.1.1_3/lib/libavformat.dylib /opt/homebrew/Cellar/ffmpeg/7.1.1_3/lib/libswscale.dylib
