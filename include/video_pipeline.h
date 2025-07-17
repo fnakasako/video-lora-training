@@ -4,19 +4,21 @@
 #include <string>
 #include <cstdint>
 
-// Manages the discovery and retrieval of AI model files from the filesystem.
+// Processes a video file to extract and save frames for AI dataset creation.
 class VideoProcessor {
 public:
     // Constructor: Initializes the processor with all necessary settings.
+    // frame_width and frame_height are optional. If <= 0, the original video dimensions are used.
     VideoProcessor(
         const std::filesystem::path& input_path,
         const std::filesystem::path& output_dir,
         bool center_crop,
         int total_frames,
-        int frame_size
+        int frame_width = -1, // Optional: defaults to original
+        int frame_height = -1 // Optional: defaults to original
     );
 
-    // Main public method to start the frame extraction process.
+    // The main public method to start the frame extraction process.
     void process();
 
 private:
@@ -25,5 +27,6 @@ private:
     std::filesystem::path output_dir_;
     bool center_crop_;
     int total_frames_;
-    int frame_size_;
-}; // A semicolon is required at the end of a class definition.
+    int frame_width_;
+    int frame_height_;
+};
